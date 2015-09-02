@@ -1,12 +1,12 @@
-ï»¿/*
+/*
 
 <config>
 
   icon: '%icon-set%/lifa.png',
   text: '',
   tooltip: 'Aktiverer LIFA system.', 
-  gst_username: 'qgisdk',
-  gst_password: 'qgisdk',
+  gst_username: 'ditGSTlogin',
+  gst_password: 'ditGSTpassword',
 
 </config>
 
@@ -18,13 +18,13 @@
   name="text"
   displayName="Tekst"
   type="html"
-  description="Angiver teksten pÃ¥ knappen" />
+  description="Angiver teksten på knappen" />
 
 <item
   name="tooltip"
   displayName="Tooltip"
   type="html"
-  description="Angiver tooltip der vises nÃ¥r musen hviler over knappen" />
+  description="Angiver tooltip der vises når musen hviler over knappen" />
 
 <item
   name="gst_username"
@@ -59,7 +59,7 @@ function (config) {
       success: function (result) {
         var node = Ext.DomQuery.selectValue('string', result.responseXML);
         //alert ("ejdexpl://?mode=single&LIFAExternalIntegrationServiceID=" + node);
-        var mw = window.open("ejdexpl://?mode=single&LIFAExternalIntegrationServiceID=" + node);
+        var mw = window.open("ejdexpl://?mode=bulk&LIFAExternalIntegrationServiceID=" + node);
 		setTimeout(function(){ mw.close(); }, 4000);
       },
       failure: function(response, opts) {
@@ -109,3 +109,4 @@ function (config) {
   return btn;
 
 }
+
