@@ -43,20 +43,18 @@ Ved opstart af dit Geograf WebGIS site skulle du nu kunne se en ny knap på knap
 
 LIFA ejdexplorer integration aktiveres ved hjælp af knap "Aktiverer EjdExplorer vha. tegnet geografisk objekt." (Knap med ejdexplorer-ikon).
 
-1. Når du trykker på knappen aktiverer du et digitaliseringsværktøj, som kan benyttes til at tegne en flade, linie eller punkt. Linie eller flade digitalisering afsluttes med dobbeltklik, mens punkt afsluttes med et enkelt venstre-klik på musen.
+1. Når du trykker på knappen, aktiverer du et digitaliseringsværktøj, som kan benyttes til at tegne en flade, linie eller punkt. Digitalisering af linie eller flade afsluttes med dobbeltklik, mens digitalisering af punkt afsluttes med et enkelt venstre-klik på musen.
 
-2. Efter digitalisering af det geografiske objekt benyttes dette af integrationsprogrammet til at finde en liste over alle matrikler, som berøres/krydses af objektet. Slutteligt startes/aktiveres EjdExplorer med matrikel-listen som inddata.
+2. Efter digitalisering af det geografiske objekt bruges dette af integrationsprogrammet til at finde en liste over alle matrikler, som berøres/krydses af det geografiske objekt. Slutteligt startes/aktiveres EjdExplorer med matrikel-listen som inddata.
 
 Umiddelbart til højre for selve EjdExplorer-knappen findes en "drop-down" knap, som aktiverer en undermenu for EjdExplorer funktionen. Undermenuen er delt op i to grupper (*):
-- Den øverste gruppe giver dig mulighed for at vælge hvilken søgeobjekt du definerer: Enten en flade, linie eller et punkt. Valget aktiverer også selve søgefunktionen.
-- Den nederste gruppe giver dig mulighed for at bestemme til hvilket faneblad i EjdExplorer de fundne matrikler vises i: Enten Enkeltsøgning, Forespørgsesgenerator eller Adresseudtræk.
+- Den øverste gruppe giver dig mulighed for at vælge hvilken søgeobjekt, du kommer til at bruge: Enten en flade, linie eller et punkt. Valget aktiverer også selve søgefunktionen.
+
+- Den nederste gruppe giver dig mulighed for at bestemme til hvilket faneblad i EjdExplorer, de fundne matrikler vises i: Enten Enkeltsøgning, Forespørgsesgenerator eller Adresseudtræk.
 
 NB! Det er muligt, at administrator har opsat systemet, således en eller begge valgrupper er fjernet. Hvis begge valgrupper er fjernet, vil knappen ikke indeholde drop-down delen.
 
-Med venlig hilsen<br>
-Bo Victor Thomsen
-GIS & database specialist
-Frederikssund kommune.
+Med venlig hilsen<br>Bo Victor Thomsen<br>GIS & database specialist<br>Frederikssund kommune.
 
 
 
