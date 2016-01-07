@@ -29,11 +29,12 @@ For at gennemføre denne del skal du have kendskab til Geografs WebGIS Editor
 
 6. Markér "LIFA3" i WebGISEditor og under "Opsætning af widget" ændrer du "GST Username" og "GST password" til dit eget username/password til Geodatastyrelsens services.
 
-7. Du kan ændre på standard indstilliger for knappen:
-I "Default metode for selektering" kan du sætte hvilket digitaliserings værktøj (Flade, linie eller punkt), som brugeren starter med at have til rådighed.
-I "Metode til aktivering af EjdExplorer" sætter du hvilket faneblad i EjdExplorer (Enkeltsøgning, Forespørgsel, eller Adresseudtræk), som EjdExplorer starter starter op med.
-I "Vis alle eksportmetoder" bestemmer du om brugeren får mulighed for at ændre på aktiveringsmetode.
-
+7. Du kan ændre på standard indstilliger for knappen:<br>
+I "Default metode for selektering" kan du sætte hvilket digitaliserings værktøj (Flade, linie eller punkt), som brugeren starter med at have til rådighed.<br>
+I "Metode til aktivering af EjdExplorer" sætter du hvilket faneblad i EjdExplorer (Enkeltsøgning, Forespørgsel, eller Adresseudtræk), som EjdExplorer starter starter op med.<br>
+I "Vis alle eksportmetoder" bestemmer du om brugeren får mulighed for at ændre på aktiveringsmetode.<br>
+I "Vis alle selekteringsmetoder" bestemmer du om brugeren får mulighed for at ændre på selekteringsmetode.<br>
+NB! Hvis både "Vis alle eksportmetoder" og "Vis alle selekteringsmetoder" er deaktiveret, ændrer knappen udseende til en alm. simpel knap.
 8. Hvis du **ikke** har installeret LIFA service i virtuel mappe "/lifa" skal du også tilpasse "URL for LIFA service" til den ændrede placering. (Bevar den øvrige del af stien i feltet)
 
 Ved opstart af dit Geograf WebGIS site skulle du nu kunne se en ny knap på knap-linien.
@@ -50,7 +51,9 @@ Umiddelbart til højre for selve EjdExplorer-knappen findes en "drop-down" knap,
 - Den øverste gruppe giver dig mulighed for at vælge hvilken søgeobjekt du definerer: Enten en flade, linie eller et punkt. Valget aktiverer også selve søgefunktionen.
 - Den nederste gruppe giver dig mulighed for at bestemme til hvilket faneblad i EjdExplorer de fundne matrikler vises i: Enten Enkeltsøgning, Forespørgsesgenerator eller Adresseudtræk.
 
-(*) Det er muligt, at valgmuligheden for at vælge faneblad i EjdExplorer er fjernet af administrator, så du kun kan vælge digitaliseringsværktøj.
+NB! Det er muligt, at administrator har opsat systemet, således en eller begge valgrupper er fjernet. Hvis begge valgrupper er fjernet, vil knappen ikke indeholde drop-down delen.
+
+
 
 
 
