@@ -6,6 +6,8 @@ Integrationen består i et sæt af programmer/services, som giver brugere af Geo
 
 For at gennemføre installationen er det nødvendigt, at du har kendskab til at administrere IIS.
 
+NB! Hvis du allerede har installeret seneste udgave af LIFA2 integrations system, kan du springe dette afsnit over. Der er ikke sket nogen opdateringer af service delen.
+
 1. Fra GITHub distributionen kopier du mappe "lifa" til en vilkårlig placering på din iis-server. Mappen kan dog med fordel placeres sammen med andre "virtual directories" mapper på din server, f.eks. "c:\inetpub\wwwroot\lifa".
 
 2. Bruger IUSR gives "read & execute" rettigheder til den kopierede lifa-mappe samt fil indhold.
