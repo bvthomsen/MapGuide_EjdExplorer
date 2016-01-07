@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+        
+        <script type="text/javascript" src="http://extjs.cachefly.net/ext-3.4.0/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="http://extjs.cachefly.net/ext-3.4.0/ext-all.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.4.0/resources/css/ext-all.css" />
+        <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.4.0/examples/shared/examples.css" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div><br />Example A</div>
+    <div id="searchresultsA"></div>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var kmsuser = 'qgisdk'; // option gemt i GeoGraf webgis
+            var kmspwd = 'qgisdk';  // option gemt i GeoGraf webgis
+            var wkt = "POLYGON ((453498.8 6180106.6, 452737.2 6180081, 452167.6 6179684.2, 451681.2 6178186.6, 452321.2 6176535.4, 455751.6 6176701.8, 455950 6178295.4, 455457.2 6179735.4, 454894 6180145, 453498.8 6180106.6))";
+            Ext.Ajax.request({
+                url: 'LifaService.asmx/GetLIFAticket',
+                method: 'POST',
+                params: { KMSuser: kmsuser, KMSpwd: kmspwd, wkt: wkt },
+                success: function (result) {
+                    var node = Ext.DomQuery.selectValue('string', result.responseXML);
+                    alert(node);
+                    // if (window.chrome) navigator.registerProtocolHandler('web+ejdexpl', 'http://www.lifa.dk?q=%s', 'EjdExplorer');
+                    // window.open("ejdexpl://?mode=single&LIFAExternalIntegrationID=" + node);
+                },
+                failure: function () { alert('failure'); }
+            });
+        }
+    </script>
+
+    </form>
+</body>
+</html>
