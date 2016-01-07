@@ -48,7 +48,7 @@ Umiddelbart til højre for selve EjdExplorer-knappen findes en "drop-down" knap,
 - Den øverste gruppe giver dig mulighed for at vælge hvilken søgeobjekt du definerer: Enten en flade, linie eller et punkt. Valget aktiverer også selve søgefunktionen.
 - Den nederste gruppe giver dig mulighed for at bestemme til hvilket faneblad i EjdExplorer de fundne matrikler vises i: Enten Enkeltsøgning, Forespørgsesgenerator eller Adresseudtræk.
 
-(*) Det er muligt, at valgmuligheden for at vælge faneblad i EjdExplorer er fjernet af administrator, spå du kun kan vælge digitaliseringsværktøj.
+(*) Det er muligt, at valgmuligheden for at vælge faneblad i EjdExplorer er fjernet af administrator, så du kun kan vælge digitaliseringsværktøj.
 
 
 
