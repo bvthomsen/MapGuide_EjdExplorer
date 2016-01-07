@@ -54,7 +54,7 @@ Umiddelbart til højre for selve EjdExplorer-knappen findes en "drop-down" knap,
 
 NB! Det er muligt, at administrator har opsat systemet, således en eller begge valgrupper er fjernet. Hvis begge valgrupper er fjernet, vil knappen ikke indeholde drop-down delen.
 
-Med venlig hilsen<br>Bo Victor Thomsen<br>GIS & database specialist<br>Frederikssund kommune.
+Med venlig hilsen<br>Bo Victor Thomsen<br>GIS & database specialist<br>Frederikssund kommune.<br>bvtho [at] frederikssund.dk
 
 
 
