@@ -86,21 +86,22 @@
 
 function (config) {
   
-  function SendRequestToServer(wktdata) {
-	
-    ExtMapApp.GlobalProgressShow('Aktiverer EjdExplorer...', true);
-    Ext.Ajax.request({
+  function SendRequestToServer(wktdata) { // Funktion til kommunikation med LIFA service
+    
+	ExtMapApp.GlobalProgressShow('Aktiverer EjdExplorer...', true);
+    
+	Ext.Ajax.request({
       url: serviceurl,
       method: 'POST',
       params: { KMSuser: gst_username, KMSpwd: gst_password, wkt: wktdata },
       success: function (result) {
-        var node = Ext.DomQuery.selectValue('string', result.responseXML);
-		var iframe = document.createElement("iframe");
-        iframe.src = "ejdexpl://?mode=" + exportmode + "&LIFAExternalIntegrationServiceID=" + node;
+        var node = Ext.DomQuery.selectValue('string', result.responseXML); // Udtræk af node id. (not pretty!!)
+		var iframe = document.createElement("iframe");  // Generer iframe
+        iframe.src = "ejdexpl://?mode=" + exportmode + "&LIFAExternalIntegrationServiceID=" + node;  // EjdExplorer aktivering
         iframe.onload = function() {
-            this.parentNode.removeChild(this);    
+            this.parentNode.removeChild(this); // Efter load, luk iframe med det samme    
         };
-        document.body.appendChild(iframe);
+        document.body.appendChild(iframe);  // Tilføj iframe (dvs. aktiver EjdExplorer)        
         setTimeout(function(){ ExtMapApp.GlobalProgressHide();}, 2000);           
       },
       failure: function(response, opts) {
@@ -110,7 +111,7 @@ function (config) {
     });
   }
 
-  function activateselect() {
+  function activateselect() { // Funktion til aktivering af dig. værktøj
     Tools.setTooltipStatus(false);
     ExtMapApp.SelectControl = selectmode;
 	ExtMapApp.OpenLayersMap.MapControls.ActivateControl(null, ExtMapApp.SelectControl);
@@ -136,21 +137,21 @@ function (config) {
     activateselect();
   };
 
-  if (displaySelectModes || displayExportModes) // Brug split-button
+  if (displaySelectModes || displayExportModes) // Valggrupper aktiveret, brug split-button
   {
-    var menuconfig = {
+    var menuconfig = { // Opret menukonfiguration for split-button
       id: 'LifaButton',
       autoCreate: true,
       items: []
     };
   
-    if (displaySelectModes) {
+    if (displaySelectModes) { // Opsætning af menu afsnit med selektion af dig. værktøj
       menuconfig.items.push({ group: 'LifaButton_SelectMode', checked: selectmode == 'LifaPoint',   text: 'Vælg med punkt',   handler: function () {selectmode = 'LifaPoint'  ; activateselect();}});
       menuconfig.items.push({ group: 'LifaButton_SelectMode', checked: selectmode == 'LifaLine',    text: 'Vælg med linie',   handler: function () {selectmode = 'LifaLine'   ; activateselect();}});
       menuconfig.items.push({ group: 'LifaButton_SelectMode', checked: selectmode == 'LifaPolygon', text: 'Vælg med flade',   handler: function () {selectmode = 'LifaPolygon'; activateselect();}});
     }
   
-    if (displayExportModes) {
+    if (displayExportModes) { // Opsætning af menu afsnit med valg af faneblad i EjdExplorer
       if (displaySelectModes) menuconfig.items.push('-'); 
       menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'single',  text: 'Aktivér Enkeltsøgning'      , handler: function () { exportmode = 'single'; }});
       menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'bulk'  ,  text: 'Aktivér Forespørgselsbygger', handler: function () { exportmode = 'bulk'  ; }});
@@ -160,7 +161,7 @@ function (config) {
     config.menu = new Ext.menu.Menu(menuconfig);
     var splitbtn = new Ext.SplitButton(config);
   
-    ExtMapApp.Events.on('maploaded', function () {
+    ExtMapApp.Events.on('maploaded', function () { // Tilføj værtøjer til digitalisering af hhv. pkt, linie, pol.
         ExtMapApp.OpenLayersMap.MapControls.AddControl(new OpenLayers.Control.DigitizeControl(SendRequestToServer, 'point'),   'LifaPoint'  );
         ExtMapApp.OpenLayersMap.MapControls.AddControl(new OpenLayers.Control.DigitizeControl(SendRequestToServer, 'line'),    'LifaLine'   );
         ExtMapApp.OpenLayersMap.MapControls.AddControl(new OpenLayers.Control.DigitizeControl(SendRequestToServer, 'polygon'), 'LifaPolygon');
@@ -170,11 +171,11 @@ function (config) {
   
     return splitbtn;
   }
-  else // Brug alm button
+  else // Ingen valggruper aktiveret, brug alm. button
   {
     var btn = new Ext.Button(config);
   
-    ExtMapApp.Events.on('maploaded', function () {
+    ExtMapApp.Events.on('maploaded', function () { // Tilføj relevant værktøj afgh. af selectmode.
         ExtMapApp.OpenLayersMap.MapControls.AddControl(new OpenLayers.Control.DigitizeControl(SendRequestToServer, selectmode.replace("Lifa", "").toLowerCase()), selectmode);
         ExtMapApp.OpenLayersMap.events.register('aftertoolchanged', this, function (evt) {btn.toggle(evt.current == selectmode, true);});
       }, 
@@ -184,5 +185,3 @@ function (config) {
   }
 
 }
-
-
