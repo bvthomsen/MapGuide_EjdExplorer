@@ -1,6 +1,6 @@
 # Integration af LIFA EjdExplorer og Geografs WEB-GIS system
 
-Integrationen består i et sæt af programmer/services, som giver brugere af Geograf's WEB GIS system mulighed for at udpege flader/linier/enkeltpositioner i web gis systemet og benytte disse til at udpege og vise ejemdoms/matrikel data i EjeExplorer.
+Integrationen består i et sæt af programmer/services, som giver brugere af Geograf's WEB GIS system mulighed for at udpege flader/linier/enkeltpositioner i web gis systemet og benytte disse til at udpege og vise ejemdoms/matrikel data i EjdExplorer.
 
 ### Installation af service
 
@@ -53,22 +53,10 @@ Umiddelbart til højre for selve EjdExplorer-knappen findes en "drop-down" knap,
 
 NB! Det er muligt, at administrator har opsat systemet, således en eller begge valgrupper er fjernet. Hvis begge valgrupper er fjernet, vil knappen ikke indeholde drop-down delen.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Med venlig hilsen<br>
+Bo Victor Thomsen
+GIS & database specialist
+Frederikssund kommune.
 
 
 
