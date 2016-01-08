@@ -1,0 +1,16 @@
+Windows Registry Editor Version 5.00
+ 
+[HKEY_CLASSES_ROOT\ejdexpl]
+@="URL:ejdexpl"
+"URL Protocol"=""
+"EditFlags"=dword:00000002
+ 
+[HKEY_CLASSES_ROOT\ejdexpl\DefaultIcon]
+@="C:\\Program Files (x86)\\LIFA\\EjdExplorer\\LIFA.EjdExplorer.GUI.exe"
+ 
+[HKEY_CLASSES_ROOT\ejdexpl\Shell]
+ 
+[HKEY_CLASSES_ROOT\ejdexpl\Shell\Open]
+ 
+[HKEY_CLASSES_ROOT\ejdexpl\Shell\Open\Command]
+@="C:\\Program Files (x86)\\LIFA\\EjdExplorer\\LIFA.EjdExplorer.GUI.exe \"%1\""

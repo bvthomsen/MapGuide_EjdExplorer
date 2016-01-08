@@ -2,6 +2,17 @@
 
 Integrationen består i et sæt af programmer/services, som giver brugere af Geograf's WEB GIS system mulighed for at udpege flader/linier/enkeltpositioner i web gis systemet og benytte disse til at udpege og vise ejemdoms/matrikel data i EjdExplorer.
 
+### Opsætning af EjdExplorer
+
+Afsnit "Opsætning af EjdExplorer" er kun en løs orientering om installation af EjdExplorer samt opsætning af EjdExplorers integrationsmodul. For autoritativ instruktioner vedr. dette, se [http://dok.lifa.dk/manual/EjdExplorer/html/index.html](http://dok.lifa.dk/manual/EjdExplorer/html/index.html)
+
+- For at integrations systemet virker, er det nødvendigt, at EjdExplorer er installeret på brugerens lokale pc(!).
+- Endvidere skal EjdExplorer udstyres med en speciel licens for at integration til web systemer virker.
+- Sluttelig skal man udføre nogle ændringer i Registry på brugerens lokale pc: Disse ændringer kan gennemføres ved at dobbeltklikke på fil "ejdexplorer.reg" i GitHub distributionen.
+- .reg-filens indhold er pr. 8/1-2016 korrekt hvis EjdExplorer er standard-installeret. Dette garenteres **ikke** for fremtidige udgaver af EjdExplorer.
+
+
+
 ### Installation af service
 
 For at gennemføre installationen er det nødvendigt, at du har kendskab til at administrere IIS.
