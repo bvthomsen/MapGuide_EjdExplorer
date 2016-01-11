@@ -4,7 +4,7 @@ Integrationen består i et sæt af programmer/services, som giver brugere af Geo
 
 ### Opsætning af EjdExplorer
 
-Afsnit "Opsætning af EjdExplorer" er kun en løs orientering om installation af EjdExplorer samt opsætning af EjdExplorers integrationsmodul. For autoritativ instruktioner vedr. dette, se [http://dok.lifa.dk/manual/EjdExplorer/html/index.html](http://dok.lifa.dk/manual/EjdExplorer/html/index.html)
+Afsnit "Opsætning af EjdExplorer" er kun en orientering om installation af EjdExplorer samt opsætning af EjdExplorers integrationsmodul. For autoritative instruktioner vedr. dette, se [http://dok.lifa.dk/manual/EjdExplorer/html/index.html](http://dok.lifa.dk/manual/EjdExplorer/html/index.html)
 
 - For at integrations systemet virker, er det nødvendigt at EjdExplorer er installeret på brugerens lokale pc(!).
 - Endvidere skal EjdExplorer udstyres med en speciel licens for at integration til web systemer virker.
@@ -13,7 +13,7 @@ Afsnit "Opsætning af EjdExplorer" er kun en løs orientering om installation af
 
 
 
-### Installation af service
+### Installation af service på IIS server
 
 For at gennemføre installationen er det nødvendigt, at du har kendskab til at administrere IIS.
 
@@ -23,9 +23,9 @@ NB! Hvis du allerede har installeret seneste udgave af LIFA2 integrations system
 
 2. Bruger IUSR gives "read & execute" rettigheder til den kopierede lifa-mappe samt fil indhold.
 
-3. Start IIS manager og tilføj en ny "application" under "Default Web Site"
+3. Start IIS manager og tilføj en ny "Application" under "Default Web Site"
 
-4. I dialogen "Add application" udfyldes "Alias" med navnet på applikationen, f.eks "lifa" (anbefales); under "Application pool" vælges "ASP .NET v4.0" (Hvis dette valg ikke findes, har du ikke installeret .NET 4 på serveren. Dette skal gøres, før du kan komme videre). I "Physical Path" vælges placeringen på den i pkt. 1 generede mappe.
+4. I dialogen "Add application" udfyldes "Alias" med navnet på applikationen, navn: "lifa" anbefales; under "Application pool" vælges "ASP .NET v4.0" (Hvis dette valg ikke findes, har du ikke installeret .NET 4 på serveren. Dette skal gøres, før du kan komme videre). I "Physical Path" vælges placeringen på den i pkt. 1 generede mappe.
 
 ### Installation af knap i Geograf web GIS
 
@@ -45,7 +45,12 @@ I "Default metode for selektering" kan du sætte hvilket digitaliserings værkt�
 I "Metode til aktivering af EjdExplorer" sætter du hvilket faneblad i EjdExplorer (Enkeltsøgning, Forespørgsel, eller Adresseudtræk), som EjdExplorer starter starter op med.<br>
 I "Vis alle eksportmetoder" bestemmer du om brugeren får mulighed for at ændre på aktiveringsmetode.<br>
 I "Vis alle selekteringsmetoder" bestemmer du om brugeren får mulighed for at ændre på selekteringsmetode.<br>
-NB! Hvis både "Vis alle eksportmetoder" og "Vis alle selekteringsmetoder" er deaktiveret, ændrer knappen udseende til en alm. simpel knap.
+NB! Hvis både "Vis alle eksportmetoder" og "Vis alle selekteringsmetoder" er deaktiveret, ændrer knappen udseende til en alm. simpel knap.<br>
+I "Ledetekst for single" bestemmer valgtekst i drop-down for single - eksport<br>
+I "Ledetekst for bulk" bestemmer valgtekst i drop-down for bulk - eksport <br>
+I "Ledetekst for merge" bestemmer valgtekst i drop-down for merge - eksport <br>
+V.h.a de tre ovenstående konfigurationsparametre har du mulighed for at tilpasse ledeteksterne, så de stemmer oeverens med fanebladsnavne i skiftende versioner af EjdExplorer.
+
 8. Hvis du **ikke** har installeret LIFA service i virtuel mappe "/lifa" skal du også tilpasse "URL for LIFA service" til den ændrede placering. (Bevar den øvrige del af stien i feltet)
 
 Ved opstart af dit Geograf WebGIS site skulle du nu kunne se en ny knap på knap-linien.
@@ -61,11 +66,11 @@ LIFA ejdexplorer integration aktiveres ved hjælp af knap "Aktiverer EjdExplorer
 Umiddelbart til højre for selve EjdExplorer-knappen findes en "drop-down" knap, som aktiverer en undermenu for EjdExplorer funktionen. Undermenuen er delt op i to grupper (*):
 - Den øverste gruppe giver dig mulighed for at vælge hvilken søgeobjekt, du kommer til at bruge: Enten en flade, linie eller et punkt. Valget aktiverer også selve søgefunktionen.
 
-- Den nederste gruppe giver dig mulighed for at bestemme til hvilket faneblad i EjdExplorer, de fundne matrikler vises i: Enten Enkeltsøgning, Forespørgsesgenerator eller Adresseudtræk.
+- Den nederste gruppe giver dig mulighed for at bestemme til hvilket faneblad i EjdExplorer, de fundne matrikler vises i: Enten "Enkeltsøgning", "Forespørgsesgenerator" eller "Adresseudtræk". Fanebladsnavnene kan variere i forhold til denne vejledning, da Administrator løbende har mulighed for at tilrette disse.
 
 NB! Det er muligt, at administrator har opsat systemet, således en eller begge valgrupper er fjernet. Hvis begge valgrupper er fjernet, vil knappen ikke indeholde drop-down delen.
 
-Med venlig hilsen<br>Bo Victor Thomsen<br>GIS & database specialist<br>Frederikssund kommune.<br>bvtho [at] frederikssund.dk
+Med venlig hilsen<br>Bo Victor Thomsen<br>GIS & database specialist<br>Frederikssund kommune.<br>bvtho [at] frederikssund [dot] dk
 
 
 
