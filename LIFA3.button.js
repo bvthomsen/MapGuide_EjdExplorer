@@ -1,17 +1,20 @@
 /*
 <config>
 
-  icon: '%icon-set%/EjdExplorer16.png',
-  text: ' ',
-  tooltip: 'Aktiverer EjdExplorer vha. tegnet geografisk objekt.', 
-  gst_username: 'DitUsernameTilGST',
-  gst_password: 'DitPasswordTilGST',
-  exportmode: 'single',
+  icon:               '%icon-set%/EjdExplorer16.png',
+  text:               ' ',
+  tooltip:            'Aktiverer EjdExplorer vha. tegnet geografisk objekt.', 
+  gst_username:       'DitUsernameTilGST',
+  gst_password:       'DitPasswordTilGST',
+  exportmode:         'single',
   displayExportModes: true,
-  selectmode: 'LifaPolygon',
+  selectmode:         'LifaPolygon',
   displaySelectModes: true,
-  serviceurl: '/lifa/LifaService.asmx/GetLIFAticket'
-
+  serviceurl:         '/lifa/LifaService.asmx/GetLIFAticket',
+  labelSingle:        'Aktivér Enkeltsøgning',
+  labelBulk:          'Aktivér Forespørgselsbygger',
+  labelMerge:         'Aktivér Adresseudtræk'
+  
 </config>
 
 <extra>
@@ -80,6 +83,24 @@
     type="html"
     description="Angiver URL for LIFA service" />
 
+  <item
+    name="labelSingle"
+    displayName="Ledetekst for single"
+    type="html"
+    description="Angiver faneblads tekst i drop-down for single-mode" />
+
+  <item
+    name="labelBulk"
+    displayName="Ledetekst for bulk"
+    type="html"
+    description="Angiver faneblads tekst i drop-down for bulk-mode" />
+	
+  <item
+    name="labelMerge"
+    displayName="Ledetekst for merge"
+    type="html"
+    description="Angiver faneblads tekst i drop-down for merge-mode" />
+	
 </extra>
 
 */
@@ -124,6 +145,9 @@ function (config) {
   var selectmode = config.selectmode;
   var exportmode = config.exportmode;
   var serviceurl = config.serviceurl;
+  var labelSingle = config.labelSingle;
+  var labelMerge = config.labelMerge;
+  var labelBulk = config.labelBulk;
 
   delete config.selectmode;
   delete config.gst_username;
@@ -132,6 +156,9 @@ function (config) {
   delete config.displayExportModes;
   delete config.displaySelectModes;
   delete config.serviceurl;
+  delete config.labelSingle;
+  delete config.labelMerge;
+  delete config.labelBulk;
 
   config.handler = function () {
     activateselect();
@@ -153,9 +180,9 @@ function (config) {
   
     if (displayExportModes) { // Opsætning af menu afsnit med valg af faneblad i EjdExplorer
       if (displaySelectModes) menuconfig.items.push('-'); 
-      menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'single',  text: 'Aktivér Enkeltsøgning'      , handler: function () { exportmode = 'single'; }});
-      menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'bulk'  ,  text: 'Aktivér Forespørgselsbygger', handler: function () { exportmode = 'bulk'  ; }});
-      menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'merge' ,  text: 'Aktivér Adresseudtræk'      , handler: function () { exportmode = 'merge' ; }});
+      menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'single',  text: labelSingle, handler: function () { exportmode = 'single'; }});
+      menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'bulk'  ,  text: labelBulk  , handler: function () { exportmode = 'bulk'  ; }});
+      menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'merge' ,  text: labelMerge , handler: function () { exportmode = 'merge' ; }});
     }
   
     config.menu = new Ext.menu.Menu(menuconfig);
