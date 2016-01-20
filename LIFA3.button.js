@@ -6,12 +6,12 @@
   tooltip:            'Aktiverer EjdExplorer vha. tegnet geografisk objekt.', 
   gst_username:       'DitUsernameTilGST',
   gst_password:       'DitPasswordTilGST',
-  exportmode:         'single',
+  exportmode:         'merge',
   displayExportModes: true,
   selectmode:         'LifaPolygon',
   displaySelectModes: true,
   serviceurl:         '/lifa/LifaService.asmx/GetLIFAticket',
-  labelSingle:        'Aktivér Enkeltsøgning',
+  labelSingle:        'Aktivér Ejendomssøgning',
   labelBulk:          'Aktivér Forespørgselsbygger',
   labelMerge:         'Aktivér Adresseudtræk'
   
@@ -56,7 +56,7 @@
     displayName="Metode til aktivering af EjdExplorer"
     type="enum"
     description="Angiver standard aktiveringsmetode for EjdExplorer" >
-    <option value="single" display="Enkeltsøgning" />
+    <option value="single" display="Ejendomssøgning" />
     <option value="bulk" display="Forespørgsel" />
     <option value="merge" display="Adresseudtræk" />
   </item>  
@@ -180,9 +180,9 @@ function (config) {
   
     if (displayExportModes) { // Opsætning af menu afsnit med valg af faneblad i EjdExplorer
       if (displaySelectModes) menuconfig.items.push('-'); 
+      menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'merge' ,  text: labelMerge , handler: function () { exportmode = 'merge' ; }});
       menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'single',  text: labelSingle, handler: function () { exportmode = 'single'; }});
       menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'bulk'  ,  text: labelBulk  , handler: function () { exportmode = 'bulk'  ; }});
-      menuconfig.items.push({ group: 'LifaButton_ExportMode', checked: exportmode == 'merge' ,  text: labelMerge , handler: function () { exportmode = 'merge' ; }});
     }
   
     config.menu = new Ext.menu.Menu(menuconfig);
