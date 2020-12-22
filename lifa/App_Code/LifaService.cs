@@ -16,8 +16,8 @@ public class LifaService : System.Web.Services.WebService {
     public string GetLIFAticket_org(string KMSuser, string KMSpwd, string wkt)
     {
         WebClient wclient = new WebClient();
-
-        string KMSuri = "http://kortforsyningen.kms.dk/service?request=GetTicket&login={0}&password={1}";
+        // old address:  string KMSuri = "http://kortforsyningen.kms.dk/service?request=GetTicket&login={0}&password={1}";
+        string KMSuri = "https://api.dataforsyningen.dk/service?request=GetTicket&login={0}&password={1}";
         string kmsticket = wclient.DownloadString(string.Format(KMSuri, KMSuser, KMSpwd));
 
         string LIFAuri = "http://www.kortviser.dk/UsersPublic/Handlers/LIFAExternalIntegrationServiceREST.ashx";
